@@ -1,0 +1,32 @@
+Erste Präsentation (5 minuten):
+Warum?
+Was machen wir?
+Wo ist der HMI Teil?
+
+Zweite Präsentation: 
+Model?????
+
+
+
+Dritte Präsentation (5 minuten):
+Wie wird es Implementiert?
+UML
+Welche libraries, android...etc
+Logik
+Programme
+
+
+
+Vierte Präsentation (5 minuten):
+Wie wird es evaluiert?
+wie kann man messen wie gut es ist?
+gefaellt es den leuten
+nutzer befragung
+Wie wird es getestet?
+
+
+
+Letzte Präsentation (5 minuten):
+Alles, das ganze prozess
+Alles zeigen
+Live demo
