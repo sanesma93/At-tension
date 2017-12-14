@@ -1,0 +1,29 @@
+#background
+{
+-fx-background-color:  #FFD39B,
+	radial-gradient(radius 50%, red, darkgray, rgb(255,0,0,0.3));
+	
+}
+
+.label
+{
+-fx-font-weight: bold;		
+-fx-font-size: 23px;
+} 
+
+.button
+{
+    -fx-font-family: "Arial";
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#ef67c6, #61A2B1);
+    -fx-text-fill: #383640;
+    -fx-background-radius: 20%;
+}
+
+.button:hover
+{
+    -fx-background-color: linear-gradient(#2A5058, #61A2B1);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 38%;
+}
