@@ -6,8 +6,15 @@ public class GameBoard {
 	
 	
 	
-	public GameBoard (Figure[] figures) {
-		
+	public GameBoard (Figure[] figures)
+	{
+		this.figures = figures;
 	}
+	
+	public Figure[] getFigures()
+	{
+		return figures;
+	}
+	
 	
 }

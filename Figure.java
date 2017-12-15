@@ -4,6 +4,11 @@ public class Figure {
 	private Colour colour;
 	private Shape shape;
 	
+	/**
+	 * 
+	 * @param colour 
+	 * @param shape
+	 */
 	public Figure(Colour colour, Shape shape) {
 	  setColour(colour);
 	  setShape(shape);

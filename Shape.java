@@ -1,4 +1,4 @@
 
 public enum Shape {
-ROUND, SQUARE, TRIANGULAR, STAR;
+ROUND, SQUARE, TRIANGULAR, STAR,
 }
