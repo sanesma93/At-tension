@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.*;
@@ -25,6 +26,7 @@ public class GUIFun
 	private JButton thirdGameButton;
 	private JButton fourthGameButton;
 	private Box buttonBox;
+	private JLabel startLabel;
 	
 	
 	public GUIFun()
@@ -51,11 +53,15 @@ public class GUIFun
 		secondGameButton = new JButton("second game");
 		thirdGameButton = new JButton("third game");
 		fourthGameButton = new JButton("fourth game");
+		startLabel = new JLabel("Select a Game Mode");
+		startLabel.setFont(new Font("text",Font.BOLD,40));
+		buttonBox.add(startLabel);
 		buttonBox.add(firstGameButton);
 		buttonBox.add(secondGameButton);
 		buttonBox.add(thirdGameButton);
 		buttonBox.add(fourthGameButton);
 		mainMenuPanel.add(buttonBox);
+		
 		
 		firstGameButton.addActionListener(game.new FirstGameButtonListener());
 		// add listeners
@@ -65,16 +71,20 @@ public class GUIFun
 	{
 		frame.requestFocusInWindow(); // to get focus back after a button click because otherwise keyboard input won't work anymore. apparently this is a 'hacky' solution but the better one looked like a huge pain
 		
+		
 		if(game.getGameState() == GameState.STARTSCREEN)
 		{			
 			frame.remove(panel);
 			frame.add(mainMenuPanel);
+			
 			mainMenuPanel.repaint();
-		}
+		}		
 		else
 		{
 			frame.remove(mainMenuPanel);
 			frame.add(panel);
+			frame.revalidate();
+			panel.revalidate();
 			
 			if (game.getGameState() == GameState.GAMEOVER)
 			{
@@ -84,9 +94,30 @@ public class GUIFun
 			{
 				mainMenuButton.setVisible(false);
 			}
-		}
+			System.out.println("updating the things" + game.getGameState().toString());
+			
+			//try
+			//{
+			//	Thread.sleep(100);				
+			//}catch(Exception ex){}
+			
+			if(game.getGameState() == GameState.COUNTDOWN)
+			{
+				Graphics g = panel.getGraphics();
+				panel.paintComponent(g);  // actively calling paintComponent instead of leaving it to Swing, this was a huge pain to figure out!
+				//panel.paintImmediately(0, 0, panel.getWidth(), panel.getHeight());
+			}
+			else
+			{
+				panel.repaint();
+			}
+			
+			System.out.println("just called repaint");
+			
+			
+			
+		}		
 		
-		panel.repaint();		
 	}
 		
 	
@@ -209,36 +240,54 @@ public class GUIFun
 			g.setColor(Color.LIGHT_GRAY);
 			g.fillRect(0, 0, this.getWidth(), this.getHeight());
 			char[] gameOver = {'G','a','m','e',' ','o','v','e','r'};  // yeah, this is ugly
-			g.setColor(Color.BLACK);
-			g.drawChars(gameOver, 0, 9, 350, yOffset);
+			g.setColor(Color.RED);
+			g.setFont(new Font("text", Font.BOLD,80));
+			g.drawChars(gameOver, 0, 9, 250, yOffset);
 		}
 		
-		/*
-		private void paintStartScreen(Graphics g)
+		private void paintCountDown(Graphics g)
 		{
 			g.setColor(Color.LIGHT_GRAY);
 			g.fillRect(0, 0, this.getWidth(), this.getHeight());
-			char[] welcome = {'S','e','l','e','c','t',' ','a',' ','G','a','m','e','!'};  // yeah, this is ugly
-			g.setColor(Color.BLACK);
-			g.drawChars(welcome, 0, 14, 350, 50);
+			g.setFont(new Font("text", Font.BOLD,80));
+			g.setColor(Color.RED);
+			char[] countDown = {'3','2','1'};
+			try
+			{
+				g.drawChars(countDown, 0, 1, 370, yOffset);
+				Thread.sleep(1000);
+				g.setColor(Color.LIGHT_GRAY);
+				g.fillRect(0, 0, this.getWidth(), this.getHeight());
+				g.setColor(Color.RED);
+				g.drawChars(countDown, 1, 1, 370, yOffset);
+				Thread.sleep(1000);
+				g.setColor(Color.LIGHT_GRAY);
+				g.fillRect(0, 0, this.getWidth(), this.getHeight());
+				g.setColor(Color.RED);
+				g.drawChars(countDown, 2, 1, 370, yOffset);
+				Thread.sleep(1000);
+			}
+			catch(Exception e){System.out.println("thread sleep problem");}
 		}
-		*/
+		
 		
 		public void paintComponent(Graphics g)
-		{	
+		{				
+			System.out.println("in paint component");
 			if(game.getGameState() == GameState.FIRSTGAME)
 			{
+				System.out.println("painting first game");
 				paintFirstGame(g);
 			}
 			else if (game.getGameState() == GameState.GAMEOVER)
 			{
 				paintGameOver(g);
 			}
-			else if(game.getGameState() == GameState.STARTSCREEN)
+			else if(game.getGameState() == GameState.COUNTDOWN)
 			{
-				//paintStartScreen(g);
-			}
-			
+				System.out.println("painting countdown");
+				paintCountDown(g);
+			}			
 			
 		}
 	}

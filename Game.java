@@ -232,9 +232,8 @@ public class Game {
 						}
 						else
 						{
-							startFirstRound();
 							showFiguretimer.stop();
-							showFiguretimer.start();
+							startFirstRound();							
 						}
 					}
 					else if (e.getKeyCode() == KeyEvent.VK_RIGHT)  // right = shape
@@ -250,9 +249,8 @@ public class Game {
 						}
 						else
 						{
-							startFirstRound();
 							showFiguretimer.stop();
-							showFiguretimer.start();
+							startFirstRound();							
 						}
 					}
 				}
@@ -303,9 +301,12 @@ public class Game {
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{			
-			gameState = GameState.FIRSTGAME;
-			startFirstRound();
+			// put in function once it works
+			gameState = GameState.COUNTDOWN;					
 			gui.updateAllTheThings();
+			
+			System.out.println("after");
+			startFirstRound();			
 		}		
 	}	
 }
