@@ -4,23 +4,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@Buttons.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="background" prefHeight="520.0" prefWidth="715.0" stylesheets="@Stylesheet.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="476.0" layoutY="14.0" text="Score" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="74.0" text="Timer" />
-      <ImageView fitHeight="171.0" fitWidth="185.0" layoutX="325.0" layoutY="155.0" nodeOrientation="INHERIT">
+      <Label fx:id="GB_Score" alignment="CENTER" contentDisplay="CENTER" layoutX="486.0" layoutY="12.0" prefHeight="50.0" prefWidth="149.0" text="Score" />
+      <Label fx:id="GB_Timer" alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="12.0" prefHeight="50.0" prefWidth="149.0" text="Timer" />
+      <ImageView fitHeight="268.0" fitWidth="262.0" layoutX="380.0" layoutY="155.0" nodeOrientation="INHERIT">
          <image>
             <Image url="@placeholder.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="171.0" fitWidth="185.0" layoutX="80.0" layoutY="153.0">
+      <ImageView fitHeight="268.0" fitWidth="262.0" layoutX="80.0" layoutY="153.0">
          <image>
             <Image url="@placeholder.png" />
          </image>
       </ImageView>
-      <TextField layoutX="105.0" layoutY="70.0" promptText="Placeholder" />
-      <TextField layoutX="417.0" layoutY="34.0" promptText="Placeholder" />
+      <TextField layoutX="69.0" layoutY="62.0" promptText="Placeholder" />
+      <TextField layoutX="486.0" layoutY="62.0" promptText="Placeholder" />
    </children>
-</Pane>
+</AnchorPane>

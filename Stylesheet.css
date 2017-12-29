@@ -1,0 +1,86 @@
+#background		//has to be a .anchorpane at the end
+{
+
+-fx-background-color:  
+	
+	linear-gradient( #7f7f7f, #4c4c4c, #191919, black);
+	//radial-gradient(farthest-side at 60% 55%, #666666, #4c4c4c, #191919);
+	//radial-gradient(radius 180%, red, derive(black, -30%), derive(green, 10%));
+}
+		
+#Headline
+{
+-fx-font-size: 5em;
+}
+
+#GB_Timer
+{
+-fx-font-size: 2.5em;
+-fx-text-fill: linear-gradient(from 0% 0% to 100% 200%, red 0%, orange 50%);
+}
+
+#GB_Score
+{
+-fx-font-size: 2.5em;
+-fx-text-fill: linear-gradient(from 0% 0% to 100% 200%, red 0%, orange 50%);
+}
+
+
+
+
+#SS_Button_Start
+{
+-fx-font-size: 6em;
+}
+
+#SS_Button_Quit
+{
+-fx-font-size: 6em;
+}
+
+
+
+
+#GO_game_over
+{
+-fx-font-size: 6em;
+-fx-text-fill: linear-gradient(from 0% 0% to 100% 200%, red 0%, orange 50%);
+}
+
+#GO_Score
+{
+-fx-font-size: 2.5em;
+-fx-text-fill: linear-gradient(from 0% 0% to 100% 200%, red 0%, orange 50%);
+}
+
+
+
+
+.label
+{ 
+	-fx-font-weight: bold;
+	-fx-text-fill: linear-gradient(from 0% 0% to 100% 200%, red 0%, orange 90%);
+	-fx-alignment: CENTER;			
+	-fx-font-family: "Times New Roman";
+	-fx-effect: dropshadow( one-pass-box , black , 6 , 0.7 , -1, 0 );
+	//-fx-border-color: rgb(49, 89, 23);
+} 
+
+
+.button
+{
+    -fx-font-family: "Arial";
+    
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(orange, red); 
+    -fx-text-fill: #383640;
+    -fx-background-radius: 20%;
+}
+
+.button:hover
+{
+    -fx-background-color: linear-gradient(red, orange);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 38%;
+}
+
