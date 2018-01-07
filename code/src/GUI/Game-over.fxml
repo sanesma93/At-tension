@@ -8,7 +8,7 @@
 <AnchorPane fx:id="background" prefHeight="605.0" prefWidth="764.0" stylesheets="@Stylesheet.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="GO_Score" alignment="CENTER" contentDisplay="CENTER" layoutX="102.0" layoutY="212.0" text="Score:" />
-      <Label fx:id="GO_game_over" alignment="CENTER" contentDisplay="CENTER" layoutX="267.0" layoutY="43.0" text="Game Over" textAlignment="CENTER" />
+      <Label fx:id="GO_game_over" alignment="CENTER" contentDisplay="CENTER" layoutX="267.0" layoutY="43.0" text="logic.Game Over" textAlignment="CENTER" />
       <ImageView fitHeight="200.0" fitWidth="300.0" layoutX="147.0" layoutY="120.0">
          <image>
             <Image url="@placeholder.png" />
