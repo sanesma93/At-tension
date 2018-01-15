@@ -13,13 +13,13 @@
 -fx-font-size: 5em;
 }
 
-#GB_Timer
+#GB_Timer_Label
 {
 -fx-font-size: 2.5em;
 -fx-text-fill: linear-gradient(from 0% 0% to 100% 200%, red 0%, orange 50%);
 }
 
-#GB_Score
+#GB_Score_Label
 {
 -fx-font-size: 2.5em;
 -fx-text-fill: linear-gradient(from 0% 0% to 100% 200%, red 0%, orange 50%);
